@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) throws Exception {
         // --- Primitive types ---
@@ -73,5 +75,13 @@ public class Main {
         System.out.println("--- Reference types ---");
         System.out.println("String name = " + name);
         System.out.println("String message = " + message);
+        /// Arrays.toString() — converts an array to a readable string
+        /// java.util   → the package (folder) where the class lives
+        /// Arrays       → a utility class with helper methods for arrays
+        /// toString()   → the method that converts the array to a readable string
+        /// flags        → your array being converted
+        System.out.println("boolean[] flags = " + Arrays.toString(flags));
+        System.out.println("int[] numbers = " + Arrays.toString(numbers));
+        System.out.println("String[] colors = " + Arrays.toString(colors));
     }
 }
