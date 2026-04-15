@@ -31,6 +31,8 @@ public class App {
         System.out.println("Âge : " + age);
         System.out.println("Ville : " + ville);
         System.out.println("Moyenne : " + moyenne);
+
+
         scanner.close();
     }
 }
