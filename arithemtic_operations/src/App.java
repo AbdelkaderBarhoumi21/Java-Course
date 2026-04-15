@@ -58,5 +58,30 @@ public class App {
 
         value %= 7;
         System.out.println("value %= 7  → " + value);
+
+        // ORDER OF OPERATIONS [P-E-M-D-A-S]
+        // P = Parentheses, E = Exponents, M = Multiplication,
+        // D = Division, A = Addition, S = Subtraction
+        System.out.println("\nOrder of Operations (PEMDAS):");
+
+        double result2 = 3 + 4 * (7 - 5) / 2;
+        System.out.println("3 + 4 * (7 - 5) / 2 = " + result2);
+        // Step 1: (7 - 5) = 2
+        // Step 2: 4 * 2 = 8
+        // Step 3: 8 / 2 = 4
+        // Step 4: 3 + 4 = 7
+
+        double result3 = (10 + 5) * 2 - 8 / 4;
+        System.out.println("(10 + 5) * 2 - 8 / 4 = " + result3);
+        // Step 1: (10 + 5) = 15
+        // Step 2: 15 * 2 = 30
+        // Step 3: 8 / 4 = 2
+        // Step 4: 30 - 2 = 28
+
+        double result4 = 100 / (5 * (2 + 3));
+        System.out.println("100 / (5 * (2 + 3)) = " + result4);
+        // Step 1: (2 + 3) = 5
+        // Step 2: 5 * 5 = 25
+        // Step 3: 100 / 25 = 4
     }
 }
