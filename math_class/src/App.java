@@ -77,6 +77,10 @@ public class App {
 
             int randomNum = (int) (Math.random() * (maxVal - minVal + 1)) + minVal;
             System.out.println("Random number: " + randomNum);
+
+            String name = "Abdelkader";
+            // printf — prints using a format string with placeholders (%). No newline unless you add \n.
+            System.out.printf("Name: %s%n", name);
         }
     }
 }
