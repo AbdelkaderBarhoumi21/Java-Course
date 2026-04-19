@@ -1,28 +1,27 @@
 package oop;
 
 /**
- * Interfaces:
- * An interface is a CONTRACT: it defines what a class must do, without saying how.
- * Since Java 8, interfaces can also provide methods with a body (default and static).
+ * Interfaces: An interface is a CONTRACT: it defines what a class must do,
+ * without saying how. Since Java 8, interfaces can also provide methods with a
+ * body (default and static).
  *
- * Key differences between an abstract class and an interface:
- * | Feature       | Abstract class                 | Interface                                |
- * | ------------- | ------------------------------ | ---------------------------------------- |
- * | Inheritance   | Only one (extends)             | Several (implements)                     |
- * | Constructor   | Yes                            | No                                       |
- * | Fields        | Any type                       | public static final only (constants)     |
- * | Methods       | Abstract + concrete            | Abstract + default + static              |
+ * Key differences between an abstract class and an interface: | Feature |
+ * Abstract class | Interface | | ------------- | ------------------------------
+ * | ---------------------------------------- | | Inheritance | Only one
+ * (extends) | Several (implements) | | Constructor | Yes | No | | Fields | Any
+ * type | public static final only (constants) | | Methods | Abstract + concrete
+ * | Abstract + default + static |
  *
- * "default" vs "static" methods in interfaces:
- * - default  : has a body, inherited by the implementing class, and CAN be overridden.
- *              Called on an INSTANCE: duck.glide();
- *              Used to add new behavior to an interface without breaking existing implementers.
- * - static   : has a body, belongs to the INTERFACE itself, NOT inherited, CANNOT be overridden.
- *              Called on the INTERFACE: Flyer.convertAltitude(1000);
- *              Used for utility/helper methods related to the interface.
+ * "default" vs "static" methods in interfaces: - default : has a body,
+ * inherited by the implementing class, and CAN be overridden. Called on an
+ * INSTANCE: duck.glide(); Used to add new behavior to an interface without
+ * breaking existing implementers. - static : has a body, belongs to the
+ * INTERFACE itself, NOT inherited, CANNOT be overridden. Called on the
+ * INTERFACE: Flyer.convertAltitude(1000); Used for utility/helper methods
+ * related to the interface.
  *
- * Note: Animal is already defined in inheritance.java (same "oop" package),
- * so Duck reuses it via "extends".
+ * Note: Animal is already defined in inheritance.java (same "oop" package), so
+ * Duck reuses it via "extends".
  */
 public class interface_class {
 
