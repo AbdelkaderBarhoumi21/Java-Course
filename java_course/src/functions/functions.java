@@ -1,20 +1,27 @@
 package functions;
 
+/**
+ * Functions in Java:
+ * - Overloading lets you define several methods with the same name but different parameters.
+ * - "static" means the method belongs to the class, not to an instance —
+ *   you can call it directly via ClassName.method().
+ * - "return" sends back a value and ends the method.
+ */
 public class functions {
 
-    // Méthode qui retourne une valeur
+    // Method that returns a value
     public static int additionner(int a, int b) {
         return a + b;
     }
 
-    // Méthode qui ne retourne rien (void)
+    // Method that returns nothing (void)
     public static void afficherMessage(String message) {
         System.out.println(">>> " + message);
     }
-    // Méthode avec valeur par défaut simulée (surcharge)
 
+    // Method with a simulated default value (overloading)
     public static double calculerTVA(double prix) {
-        return calculerTVA(prix, 0.20);  // TVA par défaut : 20%
+        return calculerTVA(prix, 0.20); // default VAT: 20%
     }
 
     public static double calculerTVA(double prix, double taux) {
@@ -23,15 +30,15 @@ public class functions {
 
     public static void main(String[] args) {
         int result = additionner(5, 2);
-        System.out.println("Résultat de l'addition : " + result);
+        System.out.println("Addition result: " + result);
 
         afficherMessage("Hello");
 
         double prixAvecTVA = calculerTVA(100);
-        System.out.println("Prix avec TVA par défaut : " + prixAvecTVA);
+        System.out.println("Price with default VAT: " + prixAvecTVA);
 
         double prixAvecTVA15 = calculerTVA(100, 0.15);
-        System.out.println("Prix avec TVA de 15% : " + prixAvecTVA15);
+        System.out.println("Price with 15% VAT: " + prixAvecTVA15);
     }
 
 }
