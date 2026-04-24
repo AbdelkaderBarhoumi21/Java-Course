@@ -1,3 +1,5 @@
+package arrays;
+
 /**
  * Arrays in Java:
  * - Arrays in Java have a fixed size — once created, you cannot add or remove elements.

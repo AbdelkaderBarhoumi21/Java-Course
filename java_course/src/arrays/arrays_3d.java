@@ -1,3 +1,5 @@
+package arrays;
+
 
 public class arrays_3d {
 
@@ -5,9 +7,9 @@ public class arrays_3d {
 
         // 3x3 matrix
         int[][] matrice = {
-            {1, 2, 3},
-            {4, 5, 6},
-            {7, 8, 9}
+                { 1, 2, 3 },
+                { 4, 5, 6 },
+                { 7, 8, 9 }
         };
 
         // Access
