@@ -38,6 +38,7 @@ public class stream_with_object_example {
         // Partition students into two groups: passed (>= 12) vs failed
         Map<Boolean, List<Etudiant>> partition = etudiants.stream()
                 .collect(Collectors.partitioningBy(e -> e.moyenne() >= 12));
+        System.out.println(partition);
 
     }
 
