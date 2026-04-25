@@ -73,3 +73,7 @@ public class lambda_expression {
         names.forEach(System.out::println); // Alice / Bob / Charlie
     }
 }
+                     
+                
+                
+        // 
