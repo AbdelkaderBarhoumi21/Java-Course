@@ -32,7 +32,9 @@ public class lambda_expression {
     public static void main(String[] args) {
 
         // 1. Runnable — no parameters, no return value
-        Runnable greet = () -> System.out.println("Hello from a lambda!");
+        // create object of Runnable + override Run()
+        Runnable greet = () -> System.out.println("Hello from a lambda!"); // body of run 
+        // call YOUR overridden version
         greet.run(); // Hello from a lambda!
 
         // 2. Consumer — takes one input, returns nothing
@@ -41,15 +43,20 @@ public class lambda_expression {
         printer.accept("Bob"); // Hi Bob
 
         // 3. BiFunction — takes two inputs, returns a value
+        // <t,u,r> => t the first function argument , u the second function argument ,
+        // the function result
         BiFunction<Integer, Integer, Integer> add = (a, b) -> a + b;
         BiFunction<Integer, Integer, Integer> multiply = (a, b) -> a * b;
         System.out.println("2 + 3 = " + add.apply(2, 3)); // 5
         System.out.println("4 * 5 = " + multiply.apply(4, 5)); // 20
 
         // 4. Function with a block body — multiple statements need { } and return
+        //<T,R> T => the function argument , R the function result
         Function<Integer, String> describe = n -> {
-            if (n > 0) return "positive";
-            if (n < 0) return "negative";
+            if (n > 0)
+                return "positive";
+            if (n < 0)
+                return "negative";
             return "zero";
         };
         System.out.println(describe.apply(5)); // positive
@@ -69,11 +76,10 @@ public class lambda_expression {
         System.out.println(isPositive.test(-3)); // false
         System.out.println(isEmpty.test("")); // true
 
-        // 7. Method reference — shortest form, equivalent to (x) -> System.out.println(x)
+        // 7. Method reference — shortest form, equivalent to (x) ->
+        // System.out.println(x)
         names.forEach(System.out::println); // Alice / Bob / Charlie
     }
 }
-                     
-                
-                
-        // 
+
+//
