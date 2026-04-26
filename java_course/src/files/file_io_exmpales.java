@@ -10,11 +10,11 @@ import java.util.stream.Stream;
  * Demonstrates common file and directory operations using java.nio.file.
  *
  * Covers:
- *   - creating directory trees
- *   - checking existence and type of a path
- *   - copying, moving and deleting files
- *   - listing the content of a directory (1 level)
- *   - walking a directory tree recursively
+ * - creating directory trees
+ * - checking existence and type of a path
+ * - copying, moving and deleting files
+ * - listing the content of a directory (1 level)
+ * - walking a directory tree recursively
  */
 public class file_io_exmpales {
     public static void main(String[] args) {
@@ -27,8 +27,8 @@ public class file_io_exmpales {
             Files.createDirectories(folder);
 
             // ----- Check existence / type -----
-            // exists       -> true if the path exists (file or folder)
-            // isDirectory  -> true only if the path points to a directory
+            // exists -> true if the path exists (file or folder)
+            // isDirectory -> true only if the path points to a directory
             Path file = Path.of("data.txt");
             boolean fileExists = Files.exists(file);
             boolean isFolder = Files.isDirectory(folder);
