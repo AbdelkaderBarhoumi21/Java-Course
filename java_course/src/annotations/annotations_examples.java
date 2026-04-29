@@ -8,20 +8,25 @@ import java.util.List;
 /**
  * This class demonstrates the most commonly used Java annotations.
  *
- * Annotations provide metadata about code. They do not directly affect program logic,
- * but they can be read by the compiler, tools (IDE, linter), or at runtime via reflection.
+ * Annotations provide metadata about code. They do not directly affect program
+ * logic,
+ * but they can be read by the compiler, tools (IDE, linter), or at runtime via
+ * reflection.
  *
  * Built-in annotations covered here:
- * - @Override        : Marks that a method overrides a superclass method.
- * - @Deprecated      : Marks an element as obsolete and discourages its use.
+ * - @Override : Marks that a method overrides a superclass method.
+ * - @Deprecated : Marks an element as obsolete and discourages its use.
  * - @SuppressWarnings : Tells the compiler to ignore specific warnings.
- * - @FunctionalInterface : Ensures an interface has exactly one abstract method.
- * - @SafeVarargs     : Suppresses warnings for varargs methods with generic arrays.
+ * - @FunctionalInterface : Ensures an interface has exactly one abstract
+ * method.
+ * - @SafeVarargs : Suppresses warnings for varargs methods with generic arrays.
  *
  * Custom annotations:
- * - @Retention       : Specifies how long an annotation is retained (SOURCE, CLASS, RUNTIME).
- * - @Target          : Restricts where an annotation can be applied (METHOD, FIELD, CLASS, etc.).
- * - @interface        : Declares a new custom annotation type.
+ * - @Retention : Specifies how long an annotation is retained (SOURCE, CLASS,
+ * RUNTIME).
+ * - @Target : Restricts where an annotation can be applied (METHOD, FIELD,
+ * CLASS, etc.).
+ * - @interface : Declares a new custom annotation type.
  */
 public class annotations_examples {
 
@@ -71,8 +76,8 @@ public class annotations_examples {
         // -------------------------------------------------
         System.out.println("\n--- Custom Annotation (@Author) ---");
         Class<Book> clazz = Book.class;
-        if (clazz.isAnnotationPresent(Author.class)) {
-            Author author = clazz.getAnnotation(Author.class);
+        if (clazz.isAnnotationPresent(BookAuthor.class)) {
+            BookAuthor author = clazz.getAnnotation(BookAuthor.class);
             System.out.println("Book author: " + author.name());
             System.out.println("Version: " + author.version());
         }
@@ -91,8 +96,8 @@ class Animal {
 }
 
 class Dog extends Animal {
-    /// Overrides toString() from Object via Animal.
-    /// Without @Override, a typo like "toStrring()" would silently create a new method.
+    /// Overrides toString() from Object via Animal. Without @Override, a typo like
+    /// "toStrring()" would silently create a new method.
     @Override
     public String toString() {
         return "Dog{name='Buddy'}";
@@ -124,7 +129,8 @@ class LegacyApi {
 // ============================================================
 class WarningDemo {
 
-    /// Demonstrates suppressing "unchecked" warnings for a cast that is guaranteed safe.
+    /// Demonstrates suppressing "unchecked" warnings for a cast that is
+    /// guaranteed safe.
     @SuppressWarnings("unchecked")
     public void uncheckedCastExample() {
         List rawList = new ArrayList();
@@ -138,12 +144,14 @@ class WarningDemo {
 
 // ============================================================
 // @FunctionalInterface — ensures the interface has exactly ONE abstract method.
-// The compiler will reject any interface annotated with this that violates the rule.
-// Such interfaces are the foundation of lambda expressions and method references.
+// The compiler will reject any interface annotated with this that violates the
+// rule.
+// Such interfaces are the foundation of lambda expressions and method
+// references.
 // ============================================================
 
-/// Represents a single action with no arguments and no return value.
-/// Annotated to guarantee it remains a valid functional interface.
+/// Represents a single action with no arguments and no return value. Annotated
+/// to guarantee it remains a valid functional interface.
 @FunctionalInterface
 interface Action {
     void execute();
@@ -161,7 +169,8 @@ interface Action {
 // ============================================================
 class Printer {
 
-    /// Safe because the method only reads the varargs; it does not expose the array.
+    /// Safe because the method only reads the varargs; it does not expose
+    /// the array.
     @SafeVarargs
     public static <T> void printItems(T... items) {
         System.out.println("Items: " + Arrays.toString(items));
@@ -179,13 +188,14 @@ class Printer {
 @Target(ElementType.TYPE)
 
 /// Custom annotation to attach author metadata to a class.
-@interface Author {
+@interface BookAuthor {
     String name();
+
     double version() default 1.0;
 }
 
-/// A class annotated with our custom @Author annotation.
-@Author(name = "Jane Doe", version = 1.2)
+/// A class annotated with our custom @BookAuthor annotation.
+@BookAuthor(name = "Jane Doe", version = 1.2)
 class Book {
     private final String title;
 
