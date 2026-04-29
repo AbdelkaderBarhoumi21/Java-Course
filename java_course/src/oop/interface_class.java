@@ -28,10 +28,10 @@ public class interface_class {
     public static void main(String[] args) {
         Duck donald = new Duck("Donald", 2);
 
-        donald.eat();       // Inherited from Animal
-        donald.takeOff();   // From Flyer interface
-        donald.swim();      // From Swimmer interface
-        donald.glide();     // default method from Flyer
+        donald.eat(); // Inherited from Animal
+        donald.takeOff(); // From Flyer interface
+        donald.swim(); // From Swimmer interface
+        donald.glide(); // default method from Flyer
 
         // Static method — called on the INTERFACE, not on an instance
         double meters = Flyer.convertAltitude(1000);
@@ -51,7 +51,8 @@ interface Flyer {
         System.out.println("Gliding through the air...");
     }
 
-    // Static method — belongs to the interface, called as Flyer.convertAltitude(...)
+    // Static method — belongs to the interface, called as
+    // Flyer.convertAltitude(...)
     static double convertAltitude(double feet) {
         return feet * 0.3048; // feet -> meters
     }

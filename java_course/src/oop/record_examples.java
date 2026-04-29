@@ -92,7 +92,6 @@ class Point {
     }
 }
 
-
 record Circle(int x, int y) {
 }
 
@@ -104,7 +103,6 @@ record Email(String email) {
         }
         email = email.toLowerCase();
     }
-
 
     public String domain() {
         return email.substring(email.indexOf('@') + 1);
