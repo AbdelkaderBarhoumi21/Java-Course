@@ -16,9 +16,9 @@ public class custom_annotations_example {
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 @interface Author {
-    String name(); // require
+    String name(); // required 
 
-    int year() default 2026;
+    int year() default 2026; // optional 
 }
 
 @Author(name = "John", year = 2025)
