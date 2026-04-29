@@ -33,24 +33,24 @@ public class polymorphisme {
 
         // Polymorphic array
         Animal[] animals = {
-            new Dog("Buddy", 2, "Golden"),
-            new Cat("Luna", 4, false),
-            new Dog("Max", 5, "Husky")
+                new Dog("Buddy", 2, "Golden"),
+                new Cat("Luna", 4, false),
+                new Dog("Max", 5, "Husky")
         };
 
         for (Animal a : animals) {
-            a.eat();             // Works for any Animal
-            // a.bark();          // ERROR — Animal has no bark() method
+            a.eat(); // Works for any Animal
+            // a.bark(); // ERROR — Animal has no bark() method
         }
 
         System.out.println("---");
 
         // instanceof + pattern matching (Java 16+)
         for (Animal a : animals) {
-            if (a instanceof Dog dog) {      // auto-cast to Dog
-                dog.bark();                  // Dog-specific method
+            if (a instanceof Dog dog) { // auto-cast to Dog
+                dog.bark(); // Dog-specific method
             } else if (a instanceof Cat cat) {
-                cat.purr();                  // Cat-specific method
+                cat.purr(); // Cat-specific method
             }
         }
     }
