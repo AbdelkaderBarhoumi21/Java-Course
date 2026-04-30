@@ -19,6 +19,35 @@ import java.util.Map;
  *   - The object has many optional fields.
  *   - You want immutability + readable construction.
  *   - You want to avoid "telescoping" constructors.
+ *
+ * Why every setter ends with `return this;`
+ * -----------------------------------------
+ * `this` = the current Builder instance the method was called on.
+ * Returning it lets the NEXT call dot-chain onto the SAME Builder:
+ *
+ *   new Builder(url)  ──► Builder
+ *      .methode(...)  ──► Builder  (same one, just modified)
+ *      .header(...)   ──► Builder  (same one, just modified)
+ *      .body(...)     ──► Builder  (same one, just modified)
+ *      .build()       ──► Requete  (NEW immutable object)
+ *
+ * Without `return this;` the setter would return void and you'd have to
+ * write each step on its own line:
+ *
+ *   Builder b = new Builder(url);
+ *   b.methode("POST");   // void → can't chain
+ *   b.header("X", "Y");
+ *   b.body("...");
+ *   Requete req = b.build();
+ *
+ * With `return this;` the same Builder flows through every call:
+ *
+ *   Builder b1 = new Builder(url);
+ *   Builder b2 = b1.methode("POST");
+ *   b1 == b2  →  true   (it's literally the same object)
+ *
+ * Only `build()` breaks the chain — it returns a new `Requete` built
+ * from the Builder's collected fields.
  */
 public class BuilderExample {
 
