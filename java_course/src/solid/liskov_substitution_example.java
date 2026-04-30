@@ -78,6 +78,7 @@ class BadPenguin extends BadBird {
  */
 interface Bird {
     void eat();
+
     void breathe();
 }
 
