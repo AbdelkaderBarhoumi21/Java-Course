@@ -6,7 +6,7 @@ package functions;
  * - Internally, it is treated as an int[] array.
  * - A method can only have one varargs parameter, and it must be the last parameter.
  */
-public class functions_varargs {
+public class FunctionsVarargs {
 
     public static int somme(int... num) {
         int total = 0;

@@ -8,7 +8,7 @@ class Counter {
     }
 }
 
-public class thread_examples {
+public class ThreadExamples {
 
     public static void main(String[] args) throws InterruptedException {
         Counter c = new Counter();

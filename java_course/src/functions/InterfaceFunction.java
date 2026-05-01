@@ -1,15 +1,15 @@
 package functions;
 
 /*
- * Functional Interface — an interface with EXACTLY ONE abstract method.
+ * Functional Interface â€” an interface with EXACTLY ONE abstract method.
  *
  * The @FunctionalInterface annotation tells the compiler to enforce this rule
  * (adding a second abstract method would cause a compile error).
  *
  * A functional interface can be implemented with a lambda expression
- * instead of writing a full class — which makes the code shorter and clearer.
+ * instead of writing a full class â€” which makes the code shorter and clearer.
  *
- * Example — Calculator has one method: calculate(a, b)
+ * Example â€” Calculator has one method: calculate(a, b)
  *
  *   Calculator add      = (a, b) -> a + b;
  *   Calculator multiply = (a, b) -> a * b;
@@ -17,7 +17,7 @@ package functions;
  *   add.calculate(2, 3);       // 5.0
  *   multiply.calculate(2, 3);  // 6.0
  */
-public class interface_function {
+public class InterfaceFunction {
     public static void main(String[] args) {
 
         // Each lambda is an implementation of the Calculator interface

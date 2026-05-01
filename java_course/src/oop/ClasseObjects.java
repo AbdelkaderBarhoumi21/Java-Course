@@ -4,7 +4,7 @@ package oop;
  * Classes and objects in Java: - A class is a blueprint; an object is an
  * instance created with "new". - Attributes (fields) hold the object's state. -
  * The constructor is called when the object is created and initializes its
- * fields. - "this" refers to the current object — used to distinguish a field
+ * fields. - "this" refers to the current object â€” used to distinguish a field
  * from a parameter with the same name. - Methods define the behavior the object
  * can perform.
  *
@@ -12,7 +12,7 @@ package oop;
  * the filename. That's why "Car" below is declared without the "public"
  * modifier.
  */
-public class classe_objects {
+public class ClasseObjects {
 
     public static void main(String[] args) {
         Car myCar = new Car("Toyota", "Red");
@@ -32,7 +32,7 @@ class Car {
     String color;
     int speed;
 
-    // Constructor — called when the object is created
+    // Constructor â€” called when the object is created
     public Car(String brand, String color) {
         this.brand = brand;   // "this" refers to the current object
         this.color = color;

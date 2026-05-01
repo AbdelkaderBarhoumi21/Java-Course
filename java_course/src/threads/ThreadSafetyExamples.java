@@ -20,7 +20,7 @@ import java.util.List;
  * Run multiple times: scenario #1 will give a DIFFERENT, WRONG result each time,
  * while scenarios #2 and #3 always give the expected value.
  */
-public class thread_safety_examples {
+public class ThreadSafetyExamples {
 
     // Number of threads and increments per thread.
     // 2 threads * 100_000 = 200_000 expected increments.
@@ -30,7 +30,7 @@ public class thread_safety_examples {
     public static void main(String[] args) throws InterruptedException {
 
         // ------------------------------------------------------------------
-        // 1) RACE CONDITION — plain int, no protection
+        // 1) RACE CONDITION â€” plain int, no protection
         // ------------------------------------------------------------------
         // value++ is NOT atomic: it is "read, add 1, write".
         // Two threads can read the same value, both add 1, and both write back
@@ -43,7 +43,7 @@ public class thread_safety_examples {
                 + "   (expected " + (THREADS * ITERATIONS) + ")  <-- usually WRONG");
 
         // ------------------------------------------------------------------
-        // 2) synchronized — simple lock
+        // 2) synchronized â€” simple lock
         // ------------------------------------------------------------------
         // The "synchronized" keyword guarantees that only ONE thread at a time
         // can be inside the method. The 3 steps of value++ become atomic.
@@ -56,7 +56,7 @@ public class thread_safety_examples {
                 + "   (expected " + (THREADS * ITERATIONS) + ")  <-- always correct");
 
         // ------------------------------------------------------------------
-        // 3) AtomicInteger — lock-free, CPU-level atomic operation
+        // 3) AtomicInteger â€” lock-free, CPU-level atomic operation
         // ------------------------------------------------------------------
         // AtomicInteger uses a special CPU instruction (Compare-And-Swap)
         // to update the value in ONE indivisible step. No lock, no waiting.
@@ -135,7 +135,7 @@ public class thread_safety_examples {
         for (Thread t : pool) t.join();
     }
 
-    /** Plain counter — NOT thread-safe (used to demonstrate the bug). */
+    /** Plain counter â€” NOT thread-safe (used to demonstrate the bug). */
     static class UnsafeCounter {
         int value = 0;
 
@@ -146,7 +146,7 @@ public class thread_safety_examples {
         }
     }
 
-    /** Counter protected by "synchronized" — thread-safe. */
+    /** Counter protected by "synchronized" â€” thread-safe. */
     static class SyncCounter {
         private int value = 0;
 

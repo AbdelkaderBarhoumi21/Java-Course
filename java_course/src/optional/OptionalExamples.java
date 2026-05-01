@@ -7,7 +7,7 @@ import java.util.Optional;
  * used to make absence explicit and avoid NullPointerException.
  * Demonstrates creation, safe extraction, and functional chaining.
  */
-public class optional_examples {
+public class OptionalExamples {
     public static void main(String[] args) {
 
         // Create an Optional that holds a non-null value
@@ -17,7 +17,7 @@ public class optional_examples {
         // Wrap a possibly-null reference: becomes empty if the argument is null
         Optional<String> nullable = Optional.ofNullable(null);
 
-        // Old style: check presence first, then extract — works but verbose
+        // Old style: check presence first, then extract â€” works but verbose
         if (hasValue.isPresent()) {
             // get() returns the inner value; throws NoSuchElementException if empty
             System.out.println(hasValue.get());

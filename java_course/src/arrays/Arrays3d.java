@@ -1,7 +1,7 @@
 package arrays;
 
 
-public class arrays_3d {
+public class Arrays3d {
 
     public static void main(String[] args) {
 

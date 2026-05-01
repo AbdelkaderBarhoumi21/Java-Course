@@ -1,6 +1,6 @@
 package generic;
 
-public class generic_class {
+public class GenericClass {
     public static void main(String[] args) {
 
         // <> in the right side => "Look at the left side and infer the type for me."

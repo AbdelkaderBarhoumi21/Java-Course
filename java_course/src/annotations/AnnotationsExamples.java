@@ -28,7 +28,7 @@ import java.util.List;
  * CLASS, etc.).
  * - @interface : Declares a new custom annotation type.
  */
-public class annotations_examples {
+public class AnnotationsExamples {
 
     public static void main(String[] args) {
 
@@ -85,7 +85,7 @@ public class annotations_examples {
 }
 
 // ============================================================
-// @Override — indicates a method is overriding a superclass method.
+// @Override â€” indicates a method is overriding a superclass method.
 // Helps catch typos at compile time (e.g., wrong method signature).
 // ============================================================
 class Animal {
@@ -105,7 +105,7 @@ class Dog extends Animal {
 }
 
 // ============================================================
-// @Deprecated — marks a method/class/field as obsolete.
+// @Deprecated â€” marks a method/class/field as obsolete.
 // Can include since="x.x" and forRemoval=true for clarity.
 // ============================================================
 class LegacyApi {
@@ -123,9 +123,9 @@ class LegacyApi {
 }
 
 // ============================================================
-// @SuppressWarnings — tells the compiler to suppress specific warnings.
+// @SuppressWarnings â€” tells the compiler to suppress specific warnings.
 // Common values: "unchecked", "rawtypes", "deprecation", "unused"
-// Use sparingly — only when you are certain the code is safe.
+// Use sparingly â€” only when you are certain the code is safe.
 // ============================================================
 class WarningDemo {
 
@@ -143,7 +143,7 @@ class WarningDemo {
 }
 
 // ============================================================
-// @FunctionalInterface — ensures the interface has exactly ONE abstract method.
+// @FunctionalInterface â€” ensures the interface has exactly ONE abstract method.
 // The compiler will reject any interface annotated with this that violates the
 // rule.
 // Such interfaces are the foundation of lambda expressions and method
@@ -164,7 +164,7 @@ interface Action {
 }
 
 // ============================================================
-// @SafeVarargs — suppresses heap-pollution warnings on varargs methods
+// @SafeVarargs â€” suppresses heap-pollution warnings on varargs methods
 // that use generic types. Must be applied to final or static methods.
 // ============================================================
 class Printer {

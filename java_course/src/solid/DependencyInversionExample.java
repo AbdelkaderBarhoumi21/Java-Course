@@ -10,29 +10,29 @@ package solid;
  *
  * One diagram to remember it all:
  *
- *   ❌ Violation                          ✅ Correct
+ *   âŒ Violation                          âœ… Correct
  *   -----------                          ----------
  *   UserService                          UserService
- *      │ (hardcoded `new MySQLDatabase`)    │ depends on
- *      ▼                                    ▼
+ *      â”‚ (hardcoded `new MySQLDatabase`)    â”‚ depends on
+ *      â–¼                                    â–¼
  *   MySQLDatabase  (concrete)            Database (interface)
- *                                          ▲   ▲   ▲
- *                                          │   │   │
+ *                                          â–²   â–²   â–²
+ *                                          â”‚   â”‚   â”‚
  *                                       MySQL Mongo Postgres
  *
- *   Change DB = rewrite UserService ❌   Swap DB freely, UserService unchanged ✅
+ *   Change DB = rewrite UserService âŒ   Swap DB freely, UserService unchanged âœ…
  */
-public class dependency_inversion_example {
+public class DependencyInversionExample {
 
     public static void main(String[] args) {
 
-        // ❌ Violation demo — locked to MySQL
+        // âŒ Violation demo â€” locked to MySQL
         System.out.println("--- Violation ---");
         BadUserService bad = new BadUserService();
         bad.saveUser("Alice");
-        // want MongoDB? edit BadUserService source — no other way ❌
+        // want MongoDB? edit BadUserService source â€” no other way âŒ
 
-        // ✅ Correct demo — same UserService, three databases
+        // âœ… Correct demo â€” same UserService, three databases
         System.out.println("\n--- Correct ---");
         UserService mysqlService    = new UserService(new MySQLDatabase());
         UserService mongoService    = new UserService(new MongoDatabase());
@@ -45,7 +45,7 @@ public class dependency_inversion_example {
 }
 
 /* =====================================================================
- * ❌ VIOLATION: high-level class hardcodes a concrete low-level class
+ * âŒ VIOLATION: high-level class hardcodes a concrete low-level class
  * ===================================================================== */
 class BadMySQLDatabase {
     void save(String data) {
@@ -54,7 +54,7 @@ class BadMySQLDatabase {
 }
 
 class BadUserService {
-    // ❌ hardcoded — UserService is glued to MySQL forever
+    // âŒ hardcoded â€” UserService is glued to MySQL forever
     private final BadMySQLDatabase db = new BadMySQLDatabase();
 
     void saveUser(String name) {
@@ -63,15 +63,15 @@ class BadUserService {
 }
 
 /* =====================================================================
- * ✅ CORRECT: depend on an abstraction; inject the concrete from outside
+ * âœ… CORRECT: depend on an abstraction; inject the concrete from outside
  * ===================================================================== */
 
-// Step 1 — the abstraction (the contract)
+// Step 1 â€” the abstraction (the contract)
 interface Database {
     void save(String data);
 }
 
-// Step 2 — low-level classes implement the contract
+// Step 2 â€” low-level classes implement the contract
 class MySQLDatabase implements Database {
     public void save(String data) {
         System.out.println("Saving to MySQL : " + data);
@@ -90,9 +90,9 @@ class PostgresDatabase implements Database {
     }
 }
 
-// Step 3 — high-level class depends ONLY on the interface
+// Step 3 â€” high-level class depends ONLY on the interface
 class UserService {
-    private final Database db; // ✅ knows only about Database — nothing specific
+    private final Database db; // âœ… knows only about Database â€” nothing specific
 
     // dependency is INJECTED from outside, not created inside
     UserService(Database db) {
@@ -100,6 +100,6 @@ class UserService {
     }
 
     void saveUser(String name) {
-        db.save(name); // ✅ calls the contract — doesn't care who answers
+        db.save(name); // âœ… calls the contract â€” doesn't care who answers
     }
 }

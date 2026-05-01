@@ -8,26 +8,26 @@ package exceptions;
  * Exception hierarchy:
  *
  * Throwable
- * ├── Error            <- System errors (OutOfMemoryError, StackOverflowError) — do NOT catch
- * └── Exception        <- The GLOBAL parent of all catchable exceptions
- *     ├── IOException          <- Checked (compiler forces you to handle it)
- *     │   ├── FileNotFoundException
- *     │   └── EOFException
- *     ├── SQLException         <- Checked (database errors)
- *     └── RuntimeException     <- Unchecked (not required to handle)
- *         ├── NullPointerException           (accessing a null object)
- *         ├── ArrayIndexOutOfBoundsException (invalid array index)
- *         ├── ArithmeticException            (e.g. division by zero)
- *         ├── NumberFormatException          (bad string -> number conversion)
- *         ├── ClassCastException             (invalid type cast)
- *         └── IllegalArgumentException       (invalid method argument)
+ * â”œâ”€â”€ Error            <- System errors (OutOfMemoryError, StackOverflowError) â€” do NOT catch
+ * â””â”€â”€ Exception        <- The GLOBAL parent of all catchable exceptions
+ *     â”œâ”€â”€ IOException          <- Checked (compiler forces you to handle it)
+ *     â”‚   â”œâ”€â”€ FileNotFoundException
+ *     â”‚   â””â”€â”€ EOFException
+ *     â”œâ”€â”€ SQLException         <- Checked (database errors)
+ *     â””â”€â”€ RuntimeException     <- Unchecked (not required to handle)
+ *         â”œâ”€â”€ NullPointerException           (accessing a null object)
+ *         â”œâ”€â”€ ArrayIndexOutOfBoundsException (invalid array index)
+ *         â”œâ”€â”€ ArithmeticException            (e.g. division by zero)
+ *         â”œâ”€â”€ NumberFormatException          (bad string -> number conversion)
+ *         â”œâ”€â”€ ClassCastException             (invalid type cast)
+ *         â””â”€â”€ IllegalArgumentException       (invalid method argument)
  *
- * IMPORTANT — "Exception e" means ANY type of exception:
+ * IMPORTANT â€” "Exception e" means ANY type of exception:
  *   Since every specific exception (like ArrayIndexOutOfBoundsException,
  *   NullPointerException, ArithmeticException, etc.) is a SUBTYPE of the
  *   global "Exception" class, writing "catch (Exception e)" acts as a
  *   catch-all: it will match ANY exception thrown in the try block.
- *   That's why it should always come LAST in a chain of catch blocks —
+ *   That's why it should always come LAST in a chain of catch blocks â€”
  *   otherwise it would swallow more specific ones before they can be caught.
  *
  * try-catch-finally:
@@ -37,7 +37,7 @@ package exceptions;
  *               Typically used to release resources (close a file, a
  *               connection, etc.).
  */
-public class excpetion_tree {
+public class ExcpetionTree {
 
     public static int divide(int a, int b) {
         try {

@@ -6,17 +6,17 @@ package oop;
  * The child class inherits the attributes and methods of the parent class.
  *
  * Key concepts:
- * - "extends"   — keyword used to inherit from another class.
- * - "super(...)"— calls the parent's constructor. Must be the FIRST statement
+ * - "extends"   â€” keyword used to inherit from another class.
+ * - "super(...)"â€” calls the parent's constructor. Must be the FIRST statement
  *                 of the child constructor.
- * - "@Override" — annotation that marks a method as redefining a parent method.
+ * - "@Override" â€” annotation that marks a method as redefining a parent method.
  *                 The compiler checks that the method actually exists in the parent.
- * - "protected" — accessible in subclasses (unlike "private").
+ * - "protected" â€” accessible in subclasses (unlike "private").
  *
  * Note: a .java file can contain only one public class, so Animal, Dog, and Cat
  * are declared without the "public" modifier here.
  */
-public class inheritance {
+public class Inheritance {
 
     public static void main(String[] args) {
         Dog rex = new Dog("Rex", 3, "German Shepherd");

@@ -13,10 +13,10 @@ package oop;
  * one public class; Shape, Circle, and Rectangle are declared without the
  * "public" modifier.
  */
-public class abstractDemo {
+public class AbstractDemo {
 
     public static void main(String[] args) {
-        // Shape s = new Shape("red");  // ERROR — cannot instantiate an abstract class
+        // Shape s = new Shape("red");  // ERROR â€” cannot instantiate an abstract class
 
         Shape circle = new Circle("blue", 5);
         Shape rect = new Rectangle("green", 4, 6);
@@ -34,12 +34,12 @@ abstract class Shape {
         this.color = color;
     }
 
-    // Abstract methods — NO body, subclasses MUST implement them
+    // Abstract methods â€” NO body, subclasses MUST implement them
     public abstract double computeArea();
 
     public abstract double computePerimeter();
 
-    // Concrete method — available to all subclasses
+    // Concrete method â€” available to all subclasses
     public void describe() {
         System.out.println("Shape " + color
                 + " | Area = " + String.format("%.2f", computeArea())

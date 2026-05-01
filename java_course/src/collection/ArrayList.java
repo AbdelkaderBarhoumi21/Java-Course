@@ -11,7 +11,7 @@ import java.util.List;
  * Common operations: add, get, set, size, contains, indexOf, remove, sort,
  * and iteration with for-each or forEach().
  */
-public class array_list {
+public class ArrayList {
     public static void main(String[] args) {
 
         // Declare as List (interface), instantiate as ArrayList (implementation)
@@ -43,8 +43,8 @@ public class array_list {
         System.out.println(firstItemIndex);
 
         // remove(int) removes by INDEX, remove(Object) removes by VALUE
-        cities.remove(4);            // remove last element by index
-        cities.remove("Tunisia");    // remove by value
+        cities.remove(4); // remove last element by index
+        cities.remove("Tunisia"); // remove by value
         System.out.println(cities);
 
         // Collections (plural) is the utility class with sort/reverse/shuffle...

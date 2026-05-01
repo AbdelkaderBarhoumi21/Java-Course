@@ -15,7 +15,7 @@ import java.util.stream.Stream;
  * - reading line by line into a List
  * - reading lazily with a Stream (memory-efficient for large files)
  */
-public class read_write_files_examples {
+public class ReadWriteFilesExamples {
     public static void main(String[] args) {
 
         // Path representing the target file (relative to the working directory).

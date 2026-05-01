@@ -12,7 +12,7 @@ import java.util.Map;
  * size, remove, and iteration via entrySet / keySet / values.
  * Advanced: putIfAbsent, merge, compute.
  */
-public class hash_map {
+public class HashMap {
     public static void main(String[] args) {
         Map<String, Integer> scores = new HashMap<>();
 

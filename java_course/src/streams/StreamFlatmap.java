@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
  * Rule: use flatMap() when each element produces a collection/array/stream
  * and you want to merge them into one flat result.
  */
-public class stream_flatmap {
+public class StreamFlatmap {
     public static void main(String[] args) {
 
         // -----------------------------------------------------------

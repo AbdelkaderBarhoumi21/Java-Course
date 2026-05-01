@@ -7,10 +7,10 @@ import java.util.Scanner;
  * block (even if an exception is thrown), so you don't need a finally to
  * call close() manually.
  *
- * Used for resources like Scanner, files, DB connections, sockets — anything
+ * Used for resources like Scanner, files, DB connections, sockets â€” anything
  * that implements AutoCloseable. Prevents resource leaks.
  */
-public class try_with_ressources {
+public class TryWithRessources {
 
     public static void main(String[] args) {
         // scanner.close() is called automatically when the try block ends

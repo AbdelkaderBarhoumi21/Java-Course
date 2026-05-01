@@ -13,7 +13,7 @@ package oop;
  * before changing state (e.g., reject a negative balance). - Lets you change
  * the internal representation later without breaking callers.
  */
-public class encapsulation {
+public class Encapsulation {
 
     public static void main(String[] args) {
         BankAccount account = new BankAccount("Alice", 1000);
@@ -29,11 +29,11 @@ public class encapsulation {
 
 class BankAccount {
 
-    // PRIVATE attributes — not directly accessible from outside
+    // PRIVATE attributes â€” not directly accessible from outside
     private String holder;
     private double balance;
 
-    // Constructor — initializes the fields when the object is created
+    // Constructor â€” initializes the fields when the object is created
     public BankAccount(String holder, double initialBalance) {
         this.holder = holder;
         if (initialBalance < 0) {
@@ -42,7 +42,7 @@ class BankAccount {
         this.balance = initialBalance;
     }
 
-    // Getters — allow read access to the private fields
+    // Getters â€” allow read access to the private fields
     public String getHolder() {
         return holder;
     }

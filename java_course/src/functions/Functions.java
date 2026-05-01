@@ -3,11 +3,11 @@ package functions;
 /**
  * Functions in Java:
  * - Overloading lets you define several methods with the same name but different parameters.
- * - "static" means the method belongs to the class, not to an instance —
+ * - "static" means the method belongs to the class, not to an instance â€”
  *   you can call it directly via ClassName.method().
  * - "return" sends back a value and ends the method.
  */
-public class functions {
+public class Functions {
 
     // Method that returns a value
     public static int additionner(int a, int b) {

@@ -9,18 +9,18 @@ package solid;
  *
  * One diagram to remember it all:
  *
- *   ❌ Violation                       ✅ Correct
+ *   âŒ Violation                       âœ… Correct
  *   -----------                       ----------
  *   Worker (work, eat, sleep,         Workable    -> work()
  *           recharge, takeBreak)      Eatable     -> eat()
- *    ├── Human  -> recharge() ❌      Sleepable   -> sleep()
- *    └── Robot  -> eat()/sleep() ❌   Rechargeable-> recharge()
+ *    â”œâ”€â”€ Human  -> recharge() âŒ      Sleepable   -> sleep()
+ *    â””â”€â”€ Robot  -> eat()/sleep() âŒ   Rechargeable-> recharge()
  *                                     Breakable   -> takeBreak()
  *
- *   Forces empty / nonsense methods   Human  implements only what humans do ✅
- *   on classes that don't need them   Robot  implements only what robots do ✅
+ *   Forces empty / nonsense methods   Human  implements only what humans do âœ…
+ *   on classes that don't need them   Robot  implements only what robots do âœ…
  */
-public class interface_segregation_examples {
+public class InterfaceSegregationExamples {
     static void assignTask(Workable worker) {
         worker.work();
     }
@@ -36,13 +36,13 @@ public class interface_segregation_examples {
         assignTask(new Robot1());
 
         sendToLunch(new Human1());
-        // sendToLunch(new Robot()); // ❌ won't compile — Robot isn't Eatable
+        // sendToLunch(new Robot()); // âŒ won't compile â€” Robot isn't Eatable
 
     }
 
 }
 
-// ❌ ONE big interface that tries to cover everything
+// âŒ ONE big interface that tries to cover everything
 interface Worker {
     void work();
 
@@ -55,7 +55,7 @@ interface Worker {
     void takeBreak(); // humans take breaks, robots don't
 }
 
-// ❌ Human forced to implement recharge() — makes no sense
+// âŒ Human forced to implement recharge() â€” makes no sense
 class Human implements Worker {
     public void work() {
         System.out.println("Human working");
@@ -70,34 +70,34 @@ class Human implements Worker {
     }
 
     public void recharge() {
-        /* ...what do I put here?? */ } // ❌ nonsense
+        /* ...what do I put here?? */ } // âŒ nonsense
 
     public void takeBreak() {
         System.out.println("Human on break");
     }
 }
 
-// ❌ Robot forced to implement eat() and sleep() — makes no sense
+// âŒ Robot forced to implement eat() and sleep() â€” makes no sense
 class Robot implements Worker {
     public void work() {
         System.out.println("Robot working");
     }
 
     public void eat() {
-        /* robots don't eat... */ } // ❌ nonsense
+        /* robots don't eat... */ } // âŒ nonsense
 
     public void sleep() {
-        /* robots don't sleep... */ } // ❌ nonsense
+        /* robots don't sleep... */ } // âŒ nonsense
 
     public void recharge() {
         System.out.println("Robot recharging");
     }
 
     public void takeBreak() {
-        /* robots don't break... */ } // ❌ nonsense
+        /* robots don't break... */ } // âŒ nonsense
 }
 
-// ✅ Small focused interfaces — each does ONE thing
+// âœ… Small focused interfaces â€” each does ONE thing
 interface Workable {
     void work();
 }
@@ -118,7 +118,7 @@ interface Breakable {
     void takeBreak();
 }
 
-// ✅ Human only implements what humans actually do
+// âœ… Human only implements what humans actually do
 class Human1 implements Workable, Eatable, Sleepable, Breakable {
     public void work() {
         System.out.println("Human working");
@@ -135,10 +135,10 @@ class Human1 implements Workable, Eatable, Sleepable, Breakable {
     public void takeBreak() {
         System.out.println("Human on break");
     }
-    // no recharge() — humans don't recharge ✅
+    // no recharge() â€” humans don't recharge âœ…
 }
 
-// ✅ Robot only implements what robots actually do
+// âœ… Robot only implements what robots actually do
 class Robot1 implements Workable, Rechargeable {
     public void work() {
         System.out.println("Robot working");
@@ -147,5 +147,5 @@ class Robot1 implements Workable, Rechargeable {
     public void recharge() {
         System.out.println("Robot recharging");
     }
-    // no eat(), sleep(), takeBreak() — robots don't do those ✅
+    // no eat(), sleep(), takeBreak() â€” robots don't do those âœ…
 }

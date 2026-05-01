@@ -16,7 +16,7 @@ import java.util.stream.Stream;
  * - listing the content of a directory (1 level)
  * - walking a directory tree recursively
  */
-public class file_io_exmpales {
+public class FileIoExmpales {
     public static void main(String[] args) {
 
         try {

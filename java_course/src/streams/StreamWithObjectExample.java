@@ -7,13 +7,13 @@ import java.util.stream.Collectors;
 record Etudiant(String nom, int age, double moyenne, String filiere) {
 }
 
-public class stream_with_object_example {
+public class StreamWithObjectExample {
     public static void main(String[] args) {
 
         // Create an immutable list of students using the Etudiant record
         List<Etudiant> etudiants = List.of(
                 new Etudiant("Alice", 22, 16.5, "Informatique"),
-                new Etudiant("Bob", 20, 12.0, "Mathématiques"),
+                new Etudiant("Bob", 20, 12.0, "MathÃ©matiques"),
                 new Etudiant("Charlie", 23, 14.5, "Informatique"),
                 new Etudiant("Diana", 21, 18.0, "Physique"),
                 new Etudiant("Eve", 22, 11.5, "Informatique"));

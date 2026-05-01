@@ -8,7 +8,7 @@ class MyThread extends Thread {
     }
 }
 
-public class create_thread {
+public class CreateThread {
     public static void main(String[] args) {
         Runnable task = () -> {
 

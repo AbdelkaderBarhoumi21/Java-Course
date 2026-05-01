@@ -8,20 +8,21 @@ import java.util.Set;
  *
  * - add() returns false and ignores the element if it's already there.
  * - Fast O(1) average-time for add / remove / contains.
- * - No guaranteed order (use LinkedHashSet for insertion order, TreeSet for sorted).
+ * - No guaranteed order (use LinkedHashSet for insertion order, TreeSet for
+ * sorted).
  *
  * Typical use cases: membership tests, deduplication, and set operations
  * (union, intersection, difference).
  */
-public class hash_set {
+public class HashSet {
     public static void main(String[] args) {
         Set<String> languages = new HashSet<>();
         languages.add("Java");
         languages.add("Python");
         languages.add("Java"); // Ignored - no duplicates
 
-        System.out.println(languages.size());              // 2
-        System.out.println(languages.contains("Java"));    // true
+        System.out.println(languages.size()); // 2
+        System.out.println(languages.contains("Java")); // true
 
         // Set operations
         // Set.of(...) -> creates an IMMUTABLE Set in one line (Java 9+).
@@ -34,22 +35,20 @@ public class hash_set {
         // We copy because addAll/retainAll/removeAll MUTATE the set they're called on.
         // Without the copy, the first operation would destroy the original 'languages'.
 
-        // Union -> all elements from both sets (A ∪ B)
+        // Union -> all elements from both sets (A âˆª B)
         Set<String> union = new HashSet<>(languages); // copy of languages
-        union.addAll(otherLanguages);                 // add every element from otherLanguages (duplicates ignored)
+        union.addAll(otherLanguages); // add every element from otherLanguages (duplicates ignored)
         System.out.println("Union: " + union);
 
-        // Intersection -> only elements present in BOTH sets (A ∩ B)
+        // Intersection -> only elements present in BOTH sets (A âˆ© B)
         Set<String> intersection = new HashSet<>(languages); // copy of languages
-        intersection.retainAll(otherLanguages);              // keep only those also in otherLanguages
+        intersection.retainAll(otherLanguages); // keep only those also in otherLanguages
         System.out.println("Intersection: " + intersection); // {Java}
 
         // Difference -> elements in the first set but NOT in the second (A \ B)
         Set<String> difference = new HashSet<>(languages); // copy of languages
-        difference.removeAll(otherLanguages);              // remove every element also in otherLanguages
-        System.out.println("Difference: " + difference);   // {Python}
-
-
+        difference.removeAll(otherLanguages); // remove every element also in otherLanguages
+        System.out.println("Difference: " + difference); // {Python}
 
     }
 }

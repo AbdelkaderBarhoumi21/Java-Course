@@ -13,7 +13,7 @@ class Counter {
     }
 }
 
-public class thread_synchronized {
+public class ThreadSynchronized {
     public static void main(String[] args) throws InterruptedException {
 
         Counter c = new Counter();

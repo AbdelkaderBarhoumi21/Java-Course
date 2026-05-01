@@ -1,6 +1,6 @@
 package exceptions;
 
-public class custom_excpetion {
+public class CustomExcpetion {
 
     public static void main(String[] args) {
         Compte compte = new Compte();
@@ -8,7 +8,7 @@ public class custom_excpetion {
             compte.retirer(500);
         } catch (SoldeInsuffisantException e) {
             System.out.println(e.getMessage());
-            System.out.println("Il manque : " + e.getMontantManquant() + "€");
+            System.out.println("Il manque : " + e.getMontantManquant() + "â‚¬");
         }
     }
 }
@@ -19,8 +19,8 @@ class SoldeInsuffisantException extends Exception {
 
     public SoldeInsuffisantException(double montantDemande, double soldeDisponible) {
 
-        super("Solde insuffisant : demandé " + montantDemande +
-                "€, disponible " + soldeDisponible + "€");
+        super("Solde insuffisant : demandÃ© " + montantDemande +
+                "â‚¬, disponible " + soldeDisponible + "â‚¬");
         this.montantDemande = montantDemande;
         this.soldeDisponible = soldeDisponible;
     }

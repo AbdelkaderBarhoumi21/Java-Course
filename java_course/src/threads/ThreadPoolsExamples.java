@@ -11,7 +11,7 @@ import java.util.concurrent.*;
  * Why a pool? Creating a new Thread is expensive (~1 MB of stack + OS call).
  * A pool creates N threads ONCE and reuses them for many tasks.
  */
-public class thread_pools_examples {
+public class ThreadPoolsExamples {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
 
         // ----- 1. ExecutorService = pool of 4 reusable threads -----
@@ -45,7 +45,7 @@ public class thread_pools_examples {
         // supplyAsync : start an async task that produces a value.
         // thenApply : transform the value once it is ready (like Stream.map).
         // thenAccept : consume the final value (terminal step, returns void).
-        // The main thread does NOT wait here — the chain runs in the background.
+        // The main thread does NOT wait here â€” the chain runs in the background.
         CompletableFuture<String> cf = CompletableFuture
                 .supplyAsync(() -> "Data") // step 1: produce "Data"
                 .thenApply(String::toUpperCase) // step 2: -> "DATA"

@@ -23,7 +23,7 @@ package oop;
  * Note: Animal is already defined in inheritance.java (same "oop" package), so
  * Duck reuses it via "extends".
  */
-public class interface_class {
+public class InterfaceClass {
 
     public static void main(String[] args) {
         Duck donald = new Duck("Donald", 2);
@@ -33,7 +33,7 @@ public class interface_class {
         donald.swim(); // From Swimmer interface
         donald.glide(); // default method from Flyer
 
-        // Static method — called on the INTERFACE, not on an instance
+        // Static method â€” called on the INTERFACE, not on an instance
         double meters = Flyer.convertAltitude(1000);
         System.out.println("1000 ft = " + meters + " m");
     }
@@ -46,12 +46,12 @@ interface Flyer {
 
     void land();
 
-    // Default method (Java 8+) — has a body, inherited by implementers
+    // Default method (Java 8+) â€” has a body, inherited by implementers
     default void glide() {
         System.out.println("Gliding through the air...");
     }
 
-    // Static method — belongs to the interface, called as
+    // Static method â€” belongs to the interface, called as
     // Flyer.convertAltitude(...)
     static double convertAltitude(double feet) {
         return feet * 0.3048; // feet -> meters

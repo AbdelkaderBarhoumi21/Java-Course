@@ -8,32 +8,32 @@ package solid;
  *
  * One diagram to remember it all:
  *
- *   ❌ Violation                       ✅ Correct
+ *   âŒ Violation                       âœ… Correct
  *   -----------                       ----------
  *   Bird (promises fly())             Bird interface (eat, breathe)
- *    ├── Eagle  -> fly() ✅            ├── FlyingBird (+ fly())
- *    └── Penguin-> fly() throws ❌     │     └── Eagle -> fly() ✅
- *                                      └── Penguin (no fly()) ✅
+ *    â”œâ”€â”€ Eagle  -> fly() âœ…            â”œâ”€â”€ FlyingBird (+ fly())
+ *    â””â”€â”€ Penguin-> fly() throws âŒ     â”‚     â””â”€â”€ Eagle -> fly() âœ…
+ *                                      â””â”€â”€ Penguin (no fly()) âœ…
  *
  *   Bird b = new Penguin();           Penguin won't even compile
- *   b.fly(); -> CRASH at runtime      as a FlyingBird ✅
+ *   b.fly(); -> CRASH at runtime      as a FlyingBird âœ…
  */
-public class liskov_substitution_example {
+public class LiskovSubstitutionExample {
 
     public static void main(String[] args) {
 
-        // ❌ Violation demo — compiles, but crashes at runtime
+        // âŒ Violation demo â€” compiles, but crashes at runtime
         System.out.println("--- Violation ---");
         BadBird badEagle = new BadEagle();
         BadBird badPenguin = new BadPenguin();
         badEagle.fly();
         try {
-            badPenguin.fly(); // 💥 surprise! breaks LSP
+            badPenguin.fly(); // ðŸ’¥ surprise! breaks LSP
         } catch (RuntimeException e) {
             System.out.println("Caught: " + e.getMessage());
         }
 
-        // ✅ Correct demo — only flying birds expose fly()
+        // âœ… Correct demo â€” only flying birds expose fly()
         System.out.println("\n--- Correct ---");
         Bird eagle = new Eagle();
         Bird penguin = new Penguin();
@@ -44,13 +44,13 @@ public class liskov_substitution_example {
         FlyingBird flyingEagle = new Eagle();
         flyingEagle.fly();
 
-        // FlyingBird flyingPenguin = new Penguin(); // ❌ won't compile — good!
+        // FlyingBird flyingPenguin = new Penguin(); // âŒ won't compile â€” good!
     }
 }
 
 /*
  * =====================================================================
- * ❌ VIOLATION: base type promises fly() that not all subtypes can keep
+ * âŒ VIOLATION: base type promises fly() that not all subtypes can keep
  * =====================================================================
  */
 abstract class BadBird {
@@ -67,13 +67,13 @@ class BadEagle extends BadBird {
 class BadPenguin extends BadBird {
     @Override
     void fly() {
-        throw new RuntimeException("Penguins can't fly!"); // ❌ LSP broken
+        throw new RuntimeException("Penguins can't fly!"); // âŒ LSP broken
     }
 }
 
 /*
  * =====================================================================
- * ✅ CORRECT: split capability into a narrower interface (FlyingBird)
+ * âœ… CORRECT: split capability into a narrower interface (FlyingBird)
  * =====================================================================
  */
 interface Bird {
@@ -113,5 +113,5 @@ class Penguin implements Bird {
     public void breathe() {
         System.out.println("Penguin breathes");
     }
-    // no fly() — honest ✅ penguins never promised to fly
+    // no fly() â€” honest âœ… penguins never promised to fly
 }

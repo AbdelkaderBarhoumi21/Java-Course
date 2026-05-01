@@ -15,7 +15,7 @@ package oop;
  * 
  * Records are ideal for simple data carriers (DTOs, value objects).
  */
-public class record_examples {
+public class RecordExamples {
     public static void main(String[] args) {
 
         // -------------------------------------------------
@@ -58,7 +58,7 @@ public class record_examples {
 
 }
 
-// BEFORE — lots of repetitive boilerplate code
+// BEFORE â€” lots of repetitive boilerplate code
 class Point {
     private final int x;
     private final int y;

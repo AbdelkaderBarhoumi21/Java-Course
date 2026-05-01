@@ -19,7 +19,7 @@ import java.io.IOException;
  * Maven dependency:
  * com.fasterxml.jackson.core:jackson-databind
  */
-public class json_examples {
+public class JsonExamples {
     public static void main(String[] args) {
 
         // ObjectMapper is the central class of Jackson.
