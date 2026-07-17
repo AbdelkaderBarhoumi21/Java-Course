@@ -25,7 +25,7 @@ record Order(
                    "total": %.2f,
                    "placedAt":"%s"
                 }
-                        """.formatted(id.value(), itemJson, subtotal, discountAmount, total, placedAt);
+                        """.formatted(id, itemJson, subtotal, discountAmount, total, placedAt);
 
     }
 }
