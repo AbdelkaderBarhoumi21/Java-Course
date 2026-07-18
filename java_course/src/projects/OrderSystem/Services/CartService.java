@@ -8,23 +8,23 @@ import java.util.NoSuchElementException;
 import Domain.*;
 import Discount.*;
 
-class CartService {
+public class CartService {
     private final Map<String, CartItem> items = new LinkedHashMap<>();
     private DiscountStrategy discount = new NoDiscount();
 
     // add or increase quantity
-    void addProduct(Product product, int qty) {
+    public void addProduct(Product product, int qty) {
         items.merge(product.id(), new CartItem(product, qty), (oldItem, newItem) -> {
             int newQty = oldItem.quantity() + newItem.quantity();
             return oldItem.withQuantity(newQty);
         });
     }
 
-    void increment(String productId) {
+    public void increment(String productId) {
         updateQty(productId, +1);
     }
 
-    void decrement(String productId) {
+    public void decrement(String productId) {
         CartItem item = getItem(productId);
         if (item.quantity() <= item.product().minQty()) {
             System.out.printf("Minimum qty for %s is %d - remove it insetad%n", item.product().name(),
@@ -34,45 +34,45 @@ class CartService {
         updateQty(productId, -1);
     }
 
-    void removeItem(String productId) {
+    public void removeItem(String productId) {
         if (items.remove(productId) == null) {
             throw new NoSuchElementException("Product not in cart: " + productId);
         }
         System.out.printf("Removed %s from cart%n", productId);
     }
 
-    void applyDiscount(DiscountStrategy strategy) {
+    public void applyDiscount(DiscountStrategy strategy) {
         this.discount = strategy;
         System.out.println("Discount applied: " + strategy.describe());
     }
 
-    void clear() {
+    public void clear() {
         items.clear();
         discount = new NoDiscount();
         System.out.println("Cart cleared");
     }
 
-    boolean isEmpty() {
+    public boolean isEmpty() {
         return items.isEmpty();
     }
 
-    double subTotal() {
+    public double subTotal() {
         return items.values().stream().mapToDouble(CartItem::subTotal).sum();
     }
 
-    double discountAmount() {
+    public double discountAmount() {
         return discount.apply(subTotal());
     }
 
-    double total() {
+    public double total() {
         return subTotal() - discountAmount();
     }
 
-    List<CartItem> snapshot() {
+    public List<CartItem> snapshot() {
         return List.copyOf(items.values());
     }
 
-    void printSummary() {
+    public void printSummary() {
         if (items.isEmpty()) {
             System.out.println("  Cart is empty.");
             return;

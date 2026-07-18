@@ -8,14 +8,14 @@ import java.time.format.DateTimeFormatter;
 
 import Domain.*;
 
-class OrderService {
+public class OrderService {
     private final OrderRepository orderRepository;
 
-    OrderService(OrderRepository orderRepository) {
+    public OrderService(OrderRepository orderRepository) {
         this.orderRepository = orderRepository;
     }
 
-    Order placerOrder(CartService cartService) {
+    public Order placeOrder(CartService cartService) {
         if (cartService.isEmpty())
             throw new IllegalStateException("Cannot place an empty order");
         Order order = new Order(OrderId.generateId(), cartService.snapshot(), cartService.subTotal(),

@@ -3,7 +3,7 @@ package Discount;
 public final class PercentageDiscount implements DiscountStrategy {
     private final double percent;
 
-    PercentageDiscount(double percent) {
+    public PercentageDiscount(double percent) {
         if (percent < 0 || percent > 100)
             throw new IllegalArgumentException("Percent must be 0-100");
         this.percent = percent;

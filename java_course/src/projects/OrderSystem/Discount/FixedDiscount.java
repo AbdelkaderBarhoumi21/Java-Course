@@ -3,7 +3,7 @@ package Discount;
 public final class FixedDiscount implements DiscountStrategy {
     private final double amount;
 
-    FixedDiscount(double amount) {
+    public FixedDiscount(double amount) {
         this.amount = amount;
     }
 
