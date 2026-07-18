@@ -1,0 +1,18 @@
+[
+{
+   "id": "ORD-1784384889335",
+   "items":"[
+ {"product": "Apple","qty": 7,"subtotal": 3.50}
+,
+ {"product": "Laptop","qty": 1,"subtotal": 999.99}
+,
+ {"product": "Redmi","qty": 3,"subtotal": 104.70}
+
+ ]",
+   "subtotal": 1108.19,
+   "discountAmount": 5.00,
+   "total": 1103.19,
+   "placedAt":"2026-07-18T15:28:09.350046"
+}
+
+]
