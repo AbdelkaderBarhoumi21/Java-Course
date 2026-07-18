@@ -1,6 +1,6 @@
 package Discount;
 
-final class FixedDiscount implements DiscountStrategy {
+public final class FixedDiscount implements DiscountStrategy {
     private final double amount;
 
     FixedDiscount(double amount) {

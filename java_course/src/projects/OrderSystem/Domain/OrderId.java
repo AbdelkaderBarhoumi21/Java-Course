@@ -1,6 +1,7 @@
 package Domain;
-record OrderId(String value) {
-    static OrderId generateId() {
+
+public record OrderId(String value) {
+    public static OrderId generateId() {
         return new OrderId("ORD-" + System.currentTimeMillis());
     }
 

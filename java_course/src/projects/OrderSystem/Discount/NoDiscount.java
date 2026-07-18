@@ -1,6 +1,6 @@
 package Discount;
 
-final class NoDiscount implements DiscountStrategy {
+public final class NoDiscount implements DiscountStrategy {
     @Override
     public double apply(double subtotal) {
         return 0.0;
